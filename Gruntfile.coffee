@@ -76,6 +76,47 @@ module.exports = (grunt)->
                 files: '<%= jshint.lib_test.src %>'
                 tasks: ['jshint:lib_test', 'qunit']
             }
+            coffee: {
+                files: ['src/coffee/*.coffee']
+                tasks: ['coffee']
+            }
+        }
+        coffee: {
+            # all: {
+            #     files: {
+            #         cwd: 'src/coffee/'
+            #         src: '*.coffee'
+            #         dest: 'src/js/'
+            #         ext: '.js'
+            #         flatten: true
+            #         expand: true
+            #     }
+            # }
+            led: {
+                files: {
+                    'src/js/led.js': 'src/coffee/led.coffee'
+                }
+            }
+            "led-fade": {
+                files: {
+                    'src/js/led-fade.js': 'src/coffee/led-fade.coffee'
+                }
+            }
+            "led-strobe": {
+                files: {
+                    'src/js/led-strobe.js': 'src/coffee/led-strobe.coffee'
+                }
+            }
+            servo: {
+                files: {
+                    'src/js/servo.js': 'src/coffee/servo.coffee'
+                }
+            }
+            button: {
+                files: {
+                    'src/js/button.js': 'src/coffee/button.coffee'
+                }
+            }
         }
     }
     grunt.initConfig(config)
