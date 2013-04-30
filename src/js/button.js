@@ -13,7 +13,7 @@
       button: button
     });
     button.on('down', function() {
-      return console.log("down");
+      console.log("down");
     });
     button.on('hold', function() {
       return console.log('hold');

@@ -3,6 +3,9 @@
 	[
 		{
 			"path": "/Users/brekkbockrath/Servers/noderobo"
+		},
+		{
+			"path": "src"
 		}
 	]
 }

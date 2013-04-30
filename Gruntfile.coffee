@@ -82,16 +82,16 @@ module.exports = (grunt)->
             }
         }
         coffee: {
-            # all: {
-            #     files: {
-            #         cwd: 'src/coffee/'
-            #         src: '*.coffee'
-            #         dest: 'src/js/'
-            #         ext: '.js'
-            #         flatten: true
-            #         expand: true
-            #     }
-            # }
+            all: {
+                files: {
+                    cwd: 'src/coffee/'
+                    src: '*.coffee'
+                    dest: 'src/js/'
+                    ext: '.js'
+                    flatten: true
+                    expand: true
+                }
+            }
             led: {
                 files: {
                     'src/js/led.js': 'src/coffee/led.coffee'
@@ -115,6 +115,16 @@ module.exports = (grunt)->
             button: {
                 files: {
                     'src/js/button.js': 'src/coffee/button.coffee'
+                }
+            }
+            ping: {
+                files: {
+                    'src/js/ping.js': 'src/coffee/ping.coffee'
+                }
+            }
+            socket: {
+                files: {
+                    'src/js/socket.js': 'src/coffee/socket.coffee'
                 }
             }
         }
