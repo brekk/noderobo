@@ -127,6 +127,30 @@ module.exports = (grunt)->
                     'src/js/socket.js': 'src/coffee/socket.coffee'
                 }
             }
+            indicator: {
+                files: {
+                    'src/js/indicator.js': 'src/coffee/indicator.coffee'
+                }
+            }
+            indicator_client: {
+                files: {
+                    'src/js/indicator-client.js': 'src/coffee/indicator-client.coffee'
+                }
+            }
+            manager: {
+                files: {
+                    'src/js/manager.js': 'src/coffee/manager.coffee'
+                }
+            }
+        }
+        copy: {
+            build: {
+                files: [
+                    # { dest: 'public/styles/', src: ['src/css/*'], filter: 'isFile', flatten: true ,expand: true }
+                    { dest: 'public/js/', src: ['src/js/*'], filter: 'isFile', flatten: true, expand: true}
+                    { dest: 'public/js/', src: ['src/external/*.js'], filter: 'isFile', flatten: true, expand: true}
+                ]
+            }
         }
     }
     grunt.initConfig(config)
@@ -143,3 +167,4 @@ module.exports = (grunt)->
 
     # Default task.
     grunt.registerTask('default', ['jshint', 'qunit', 'concat', 'uglify'])
+    grunt.registerTask 'indicator', ['coffee:manager', 'coffee:indicator_client', 'coffee:indicator', 'copy:build']

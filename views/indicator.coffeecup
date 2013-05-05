@@ -1,0 +1,20 @@
+doctype 5
+html ->
+    head ->
+        meta charset: "utf-8"
+        title "#{@title or 'Noderobo'} | Indicator"
+        script type: "text/javascript", src: "/js/socket.io.js"
+        script type: "text/javascript", src: "/js/jquery.min.js"
+        script type: "text/javascript", src: "/js/indicator-client.js"
+        style '''
+        .hidden {
+            display: none;
+        }
+        '''
+    body '#main', onload: 'indicatorInit();', ->
+        div "#loading", ->
+            strong "Loading&hellip;"
+        div "#failure.toggle.hidden", ->
+            h1 -> "That shit is broken, yo."
+        div "#success.toggle.hidden", ->
+            h1 -> "Great success!"

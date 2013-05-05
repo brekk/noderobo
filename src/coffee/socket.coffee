@@ -13,14 +13,14 @@ io.sockets.on 'connection', (socket)->
         socket.emit 'hold'
 
 board.on 'ready', ()->
-    led = new five.Led({pin: 13})
+    # led = new five.Led({pin: 13})
     button = new five.Button(8)
     board.repl.inject {
         button: button
     }
 
     button.on 'down', ()->
-        led.on()
+        # led.on()
         board.emit 'on'
         console.log "down"
         return
@@ -30,6 +30,6 @@ board.on 'ready', ()->
         console.log 'hold'
 
     button.on 'up', ()->
-        led.off()
+        # led.off()
         board.emit 'off'
         console.log 'up'
